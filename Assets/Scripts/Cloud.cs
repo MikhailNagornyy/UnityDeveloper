@@ -2,26 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TZ
+namespace Test
 {
     public class Cloud : MonoBehaviour
     {
         [SerializeField] private ParticleSystem m_particleSystem;
-        void Start()
-        {
+
+        public void PlayFX()
+        { 
+            m_particleSystem.Play();
+        }
+
+        public void StopFX()
+        { 
             m_particleSystem.Stop();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-        public void PlayFx()
-        {
-            m_particleSystem.Play();
-        }
-        public void StopFx()
+        private void Start()
         {
             m_particleSystem.Stop();
         }

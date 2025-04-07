@@ -1,6 +1,10 @@
-﻿Logs
+﻿.vs
+.vscode
 Library
-Temp
+*.vsconfig
+*.csproj
+test_xlab.sln
+obj
+Logs
 UserSettings
-*.sln
-.vsconfig
+Temp
