@@ -1,21 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Unity.Properties;
+using UnityEditor;
 using UnityEngine;
 
-
-namespace TZ 
+namespace TZ
 {
     public class Refresh : MonoBehaviour
     {
         public List<GameObject> tools;
-
-        private void Start()
+        public void Start()
         {
             ChangeTool();
         }
-        public void ChangeTool() 
+        public void ChangeTool()
         {
-            var index = Random.Range(0, tools.Count);
+            int index = UnityEngine.Random.Range(0, tools.Count);
             SetActiveTool(index);
         }
         private void SetActiveTool(int index)
