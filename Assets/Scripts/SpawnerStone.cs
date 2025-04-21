@@ -1,32 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Golf
 {
-    public class Spawners : MonoBehaviour
+    public class SpawnerStone : MonoBehaviour
     {
-        public GameObject[] prefabs;
+        public GameObject[] prefabs; 
 
-        public GameObject Spawn()
+        public void Spawn()
         {
             var prefab = GetRandomPrefab();
+
             if (prefab == null)
             {
-                return null;
+                return;
             }
-
-            return Instantiate(prefab, transform.position, Quaternion.identity);
+            Instantiate(prefab, transform.position, Quaternion.identity);
         }
-
         private GameObject GetRandomPrefab()
         {
             if (prefabs.Length == 0)
             {
                 return null;
             }
-
-            int index = Random.Range(0, prefabs.Length);
+            int index = UnityEngine.Random.Range(0, prefabs.Length);
             return prefabs[index];
         }
     }

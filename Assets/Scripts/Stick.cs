@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
 namespace Golf
 {
     public class Stick : MonoBehaviour
     {
+        public UnityEvent<Collider> onColiision;
 
-        public UnityEvent<Collider> onCollision;
         private void OnCollisionEnter(Collision collision)
         {
-            onCollision.Invoke(collision.collider);
+            onColiision.Invoke(collision.collider);
         }
     }
 }
